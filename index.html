@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ventre Calme • Auto-hypnose</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">VC</div>
+      <div>
+        <h1>Ventre Calme</h1>
+        <p class="subtitle">Auto-hypnose douce pour apaiser le ventre et relâcher</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Avant de commencer</h2>
+      <ul class="bullets">
+        <li>Installe-toi confortablement (assise ou semi-allongée), sans être dérangée.</li>
+        <li>Si besoin : plaid, lumière tamisée, téléphone en mode avion.</li>
+        <li>Objectif simple : “apaiser mon ventre” ou “relâcher”.</li>
+      </ul>
+      <p class="disclaimer">
+        Ceci est un outil de bien-être. Il ne remplace pas un avis médical.
+        En cas de symptômes inhabituels ou importants (douleur intense, sang, fièvre, amaigrissement…), consulte rapidement.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Choisir une séance</h2>
+      <div class="grid">
+        <button class="session" data-session="express">
+          <span class="title">Express Ventre Calme</span>
+          <span class="meta">6 min • apaiser vite</span>
+        </button>
+
+        <button class="session" data-session="ventre">
+          <span class="title">Ventre fluide</span>
+          <span class="meta">12 min • gaz / ballonnements / constipation / spasmes</span>
+        </button>
+
+        <button class="session" data-session="souvenir">
+          <span class="title">Lâcher-prise (souvenir ressource)</span>
+          <span class="meta">12 min • relâcher</span>
+        </button>
+
+        <button class="session" data-session="elman">
+          <span class="title">Profonde détente (Elman)</span>
+          <span class="meta">25 min • détente + confort ventre</span>
+        </button>
+
+        <button class="session secondary" data-session="crise">
+          <span class="title">Mode “Crise”</span>
+          <span class="meta">90 sec • respiration + ancrage</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card" id="player">
+      <div class="player-head">
+        <h2 id="playerTitle">Séance</h2>
+        <div class="pill" id="playerDuration">—</div>
+      </div>
+
+      <div class="progress">
+        <div class="bar" id="bar"></div>
+      </div>
+
+      <div class="time-row">
+        <div>
+          <div class="label">Temps restant</div>
+          <div class="time" id="timeLeft">00:00</div>
+        </div>
+        <div class="controls">
+          <button id="btnStart" class="btn primary">Démarrer</button>
+          <button id="btnPause" class="btn" disabled>Pause</button>
+          <button id="btnReset" class="btn" disabled>Recommencer</button>
+        </div>
+      </div>
+
+      <article class="script" id="script"></article>
+
+      <details class="details">
+        <summary>Options</summary>
+        <div class="options">
+          <label class="toggle">
+            <input type="checkbox" id="toggleBeep" checked />
+            <span>Son discret de fin</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="toggleNight" />
+            <span>Mode nuit</span>
+          </label>
+        </div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Journal (30 secondes)</h2>
+      <div class="grid2">
+        <div class="field">
+          <label>Inconfort ventre (0–10)</label>
+          <input id="bellyBefore" type="number" min="0" max="10" value="5" />
+        </div>
+        <div class="field">
+          <label>Stress (0–10)</label>
+          <input id="stressBefore" type="number" min="0" max="10" value="5" />
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="saveEntry" class="btn primary">Enregistrer “avant”</button>
+        <button id="clearLog" class="btn danger">Effacer l’historique</button>
+      </div>
+
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© HypnoseJoffrey • Outil personnel • Respire, ralentis, laisse le ventre se déposer 🌿</p>
+  </footer>
+
+  <audio id="beep" preload="auto">
+    <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQAAAAA=" type="audio/wav" />
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
